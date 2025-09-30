@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,15 +50,22 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        vgu: {
+          red: "hsl(var(--vgu-red))",
+          "red-dark": "hsl(var(--vgu-red-dark))",
+          "red-light": "hsl(var(--vgu-red-light))",
+          gray: {
+            50: "hsl(var(--vgu-gray-50))",
+            100: "hsl(var(--vgu-gray-100))",
+            200: "hsl(var(--vgu-gray-200))",
+            300: "hsl(var(--vgu-gray-300))",
+            400: "hsl(var(--vgu-gray-400))",
+            500: "hsl(var(--vgu-gray-500))",
+            600: "hsl(var(--vgu-gray-600))",
+            700: "hsl(var(--vgu-gray-700))",
+            800: "hsl(var(--vgu-gray-800))",
+            900: "hsl(var(--vgu-gray-900))",
+          },
         },
       },
       borderRadius: {
