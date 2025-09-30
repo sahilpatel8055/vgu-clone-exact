@@ -71,33 +71,33 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl p-0 gap-0 bg-transparent border-none overflow-hidden">
-        <div className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-y-auto bg-white rounded-lg">
+      <DialogContent className="max-w-4xl p-0 gap-0 bg-transparent border-none overflow-hidden max-h-[95vh]">
+        <div className="flex flex-col md:flex-row h-full bg-white rounded-lg overflow-hidden">
           {/* Left side - Campus image (desktop only) */}
           <div className="hidden md:block md:w-1/2 relative">
             <img 
-              src="/degreeBack-CRXE7rMI.webp" 
+              src="/whoweare-DxdwyeV8.webp" 
               alt="VGU Campus" 
               className="w-full h-full object-cover"
             />
           </div>
           
           {/* Right side - Form */}
-          <div className="w-full md:w-1/2 p-6 md:p-8 relative">
+          <div className="w-full md:w-1/2 p-6 md:p-8 relative overflow-y-auto">
             <button
               onClick={() => onOpenChange(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10"
             >
               <X size={24} />
             </button>
 
-            <DialogHeader className="mb-6">
-              <DialogTitle className="text-2xl md:text-3xl font-bold text-[#7F1813] text-center">
+            <DialogHeader className="mb-4">
+              <DialogTitle className="text-xl md:text-2xl font-bold text-[#7F1813] text-center">
                 Great Decision! Let's Connect With You Soon
               </DialogTitle>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Full Name</label>
@@ -213,8 +213,8 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 my-4">
-                <div className="bg-gray-200 text-xl font-bold tracking-wider px-5 py-2.5 rounded flex gap-1 select-none">
+              <div className="flex items-center gap-3 my-3">
+                <div className="bg-gray-200 text-lg font-bold tracking-wider px-4 py-2 rounded flex gap-1 select-none">
                   <span className="text-[#2AB89D]">2</span>
                   <span className="text-[#E57373]">R</span>
                   <span className="text-[#7E57C2]">8</span>
@@ -223,7 +223,7 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                   <span className="text-[#E57373]">M</span>
                 </div>
                 <button type="button" className="text-gray-600 hover:text-gray-800">
-                  <RefreshCw size={24} />
+                  <RefreshCw size={20} />
                 </button>
               </div>
 
@@ -238,7 +238,7 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
 
               <button
                 type="submit"
-                className="w-full bg-black text-white font-semibold py-3 rounded-full hover:bg-gray-800 transition-colors mt-4"
+                className="w-full bg-black text-white font-semibold py-2.5 rounded-full hover:bg-gray-800 transition-colors mt-3"
               >
                 Submit
               </button>
