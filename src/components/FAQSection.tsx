@@ -32,7 +32,7 @@ const FAQSection = () => {
             </p>
             <div className="flex items-center gap-4 mt-2">
               <a
-                href="tel:+919220315527"
+                href="tel:+917204280689"
                 title="Call Admission Queries"
                 className="bg-vgu-red p-3 rounded-full cursor-pointer hover:bg-vgu-red-dark transition"
               >

@@ -1,4 +1,8 @@
+import { useState } from "react";
+import CounselingFormDialog from "./CounselingFormDialog";
+
 const GlobalReachSection = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   return (
     <div className="w-full">
       <section 
@@ -16,12 +20,16 @@ const GlobalReachSection = () => {
               Trusted Globally Across <br />
               4 Continents
             </h2>
-            <button className="custom-btn-bg text-white font-bold px-6 py-3 rounded-md shadow-lg cursor-pointer font-poppins">
+            <button 
+              onClick={() => setIsFormOpen(true)}
+              className="custom-btn-bg text-white font-bold px-6 py-3 rounded-md shadow-lg cursor-pointer font-poppins"
+            >
               Apply Now
             </button>
           </div>
         </div>
       </section>
+      <CounselingFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
     </div>
   );
 };

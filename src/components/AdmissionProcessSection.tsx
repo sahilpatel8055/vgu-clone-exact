@@ -1,4 +1,8 @@
+import { useState } from "react";
+import CounselingFormDialog from "./CounselingFormDialog";
+
 const AdmissionProcessSection = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   return (
     <section className="bg-[#fff7f7] py-8 px-4 lg:px-20">
       <div className="max-w-7xl mx-auto text-center mb-10">
@@ -16,10 +20,14 @@ const AdmissionProcessSection = () => {
             src="/admission-ChJgitmS.webp"
           />
         </div>
-        <button className="custom-btn-bg text-white font-bold px-6 py-3 rounded-md shadow-lg cursor-pointer font-poppins mt-4">
+        <button 
+          onClick={() => setIsFormOpen(true)}
+          className="custom-btn-bg text-white font-bold px-6 py-3 rounded-md shadow-lg cursor-pointer font-poppins mt-4"
+        >
           Apply Now
         </button>
       </div>
+      <CounselingFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
     </section>
   );
 };

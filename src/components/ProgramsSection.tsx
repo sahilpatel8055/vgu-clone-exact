@@ -1,7 +1,9 @@
 import Slider from "react-slick";
-import { Calendar, IndianRupee } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Clock, IndianRupee, BookOpen } from "lucide-react";
+import { useState } from "react";
+import CounselingFormDialog from "./CounselingFormDialog";
 
 interface Program {
   id: string;
@@ -108,6 +110,7 @@ const programs: Program[] = [
 ];
 
 const ProgramsSection = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -197,7 +200,7 @@ const ProgramsSection = () => {
                     
                     <div className="mt-3 space-y-1 text-sm">
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-[#7F1813]" />
+                        <Clock className="w-4 h-4 text-[#7F1813]" />
                         <span className="font-bold">Duration:</span>
                         <span className="text-gray-700 font-medium">{program.duration}</span>
                       </div>
@@ -209,7 +212,10 @@ const ProgramsSection = () => {
                     </div>
                   </div>
                   
-                  <button className="absolute bottom-3 left-3 bg-[#7F1813] text-white text-xs font-semibold px-4 py-1 rounded-lg cursor-pointer hover:bg-[#6B1410] transition-colors">
+                  <button 
+                    onClick={() => setIsFormOpen(true)}
+                    className="absolute bottom-3 left-3 bg-[#7F1813] text-white text-xs font-semibold px-4 py-1 rounded-lg cursor-pointer hover:bg-[#6B1410] transition-colors"
+                  >
                     View Program
                   </button>
                 </div>
@@ -218,6 +224,8 @@ const ProgramsSection = () => {
           </Slider>
         </div>
       </div>
+
+      <CounselingFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
 
       <style>{`
         .programs-slider .slick-prev,

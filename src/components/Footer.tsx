@@ -16,14 +16,14 @@ const Footer = () => {
           <div className="h-[2px] w-14 bg-white mb-4 mx-auto md:mx-0"></div>
           <p className="mb-2">
             Admission Queries:{" "}
-            <a href="tel:+919540373222" className="text-blue-400 hover:underline">
-              +919540373222
+            <a href="tel:+917204280689" className="text-blue-400 hover:underline">
+              +917204280689
             </a>
           </p>
           <p className="mb-2">
             Student Helpline:{" "}
-            <a href="tel:+919540373222" className="text-blue-400 hover:underline">
-              +919540373222
+            <a href="tel:+917204280689" className="text-blue-400 hover:underline">
+              +917204280689
             </a>
           </p>
           <p className="mb-2">
