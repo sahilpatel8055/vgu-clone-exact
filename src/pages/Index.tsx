@@ -7,6 +7,10 @@ import ProgramsSection from "@/components/ProgramsSection";
 import WhyVGUSection from "@/components/WhyVGUSection";
 import ImpactSection from "@/components/ImpactSection";
 import GlobalReachSection from "@/components/GlobalReachSection";
+import PedagogySection from "@/components/PedagogySection";
+import AdmissionProcessSection from "@/components/AdmissionProcessSection";
+import DegreeJourneySection from "@/components/DegreeJourneySection";
+import CommunitySection from "@/components/CommunitySection";
 import ChatWidget from "@/components/ChatWidget";
 
 const Index = () => {
@@ -21,6 +25,10 @@ const Index = () => {
       <WhyVGUSection />
       <ImpactSection />
       <GlobalReachSection />
+      <PedagogySection />
+      <AdmissionProcessSection />
+      <DegreeJourneySection />
+      <CommunitySection />
       <ChatWidget />
     </div>
   );
