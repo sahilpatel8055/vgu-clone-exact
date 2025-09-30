@@ -3,6 +3,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import RankingsSection from "@/components/RankingsSection";
+import ProgramsSection from "@/components/ProgramsSection";
 import ChatWidget from "@/components/ChatWidget";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <RankingsSection />
+      <ProgramsSection />
       <ChatWidget />
     </div>
   );
