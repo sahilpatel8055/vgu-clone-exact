@@ -5,6 +5,8 @@ import AboutSection from "@/components/AboutSection";
 import RankingsSection from "@/components/RankingsSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import WhyVGUSection from "@/components/WhyVGUSection";
+import ImpactSection from "@/components/ImpactSection";
+import GlobalReachSection from "@/components/GlobalReachSection";
 import ChatWidget from "@/components/ChatWidget";
 
 const Index = () => {
@@ -17,6 +19,8 @@ const Index = () => {
       <RankingsSection />
       <ProgramsSection />
       <WhyVGUSection />
+      <ImpactSection />
+      <GlobalReachSection />
       <ChatWidget />
     </div>
   );
