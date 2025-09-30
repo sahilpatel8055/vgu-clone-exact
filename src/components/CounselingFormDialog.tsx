@@ -71,10 +71,10 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[90vw] md:max-w-3xl p-0 gap-0 bg-transparent border-none overflow-hidden max-h-[90vh]">
+      <DialogContent className="max-w-[92vw] md:max-w-3xl p-0 gap-0 bg-transparent border-none overflow-hidden max-h-[85vh]">
         <div className="flex flex-col md:flex-row h-fit bg-white rounded-lg overflow-hidden">
           {/* Left side - Campus image (desktop only) */}
-          <div className="hidden md:block md:w-1/2 relative min-h-[600px]">
+          <div className="hidden md:block md:w-1/2 relative min-h-[550px]">
             <img 
               src="/whoweare-DxdwyeV8.webp" 
               alt="VGU Campus" 
@@ -83,39 +83,39 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
           </div>
           
           {/* Right side - Form */}
-          <div className="w-full md:w-1/2 p-4 md:p-6 relative">
+          <div className="w-full md:w-1/2 p-3 md:p-5 relative">
             <button
               onClick={() => onOpenChange(false)}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 z-10"
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
-            <DialogHeader className="mb-3 md:mb-4">
-              <DialogTitle className="text-base md:text-xl font-bold text-[#7F1813] text-center pr-6">
+            <DialogHeader className="mb-2 md:mb-3">
+              <DialogTitle className="text-sm md:text-lg font-bold text-[#7F1813] text-center pr-5">
                 Great Decision! Let's Connect With You Soon
               </DialogTitle>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="space-y-2 md:space-y-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+            <form onSubmit={handleSubmit} className="space-y-1.5 md:space-y-2">
+              <div className="grid grid-cols-2 gap-1.5 md:gap-2">
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Full Name</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Full Name</label>
                   <input
                     type="text"
                     placeholder="Enter your full name"
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813]"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813]"
                     required
                     value={formData.fullName}
                     onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                   />
                 </div>
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Your Email</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Your Email</label>
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813]"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813]"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -123,23 +123,23 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 gap-1.5 md:gap-2">
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Mobile</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Mobile</label>
                   <input
                     type="tel"
                     placeholder="Enter phone"
                     maxLength={10}
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813]"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813]"
                     required
                     value={formData.mobile}
                     onChange={(e) => setFormData({...formData, mobile: e.target.value})}
                   />
                 </div>
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Select Course</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Select Course</label>
                   <select
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813] bg-white"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813] bg-white"
                     required
                     value={formData.course}
                     onChange={(e) => setFormData({...formData, course: e.target.value})}
@@ -150,11 +150,11 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 gap-1.5 md:gap-2">
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Select State</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Select State</label>
                   <select
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813] bg-white"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813] bg-white"
                     required
                     value={formData.state}
                     onChange={(e) => setFormData({...formData, state: e.target.value})}
@@ -164,11 +164,11 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">City</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">City</label>
                   <input
                     type="text"
                     placeholder="Enter your city"
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813]"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813]"
                     required
                     value={formData.city}
                     onChange={(e) => setFormData({...formData, city: e.target.value})}
@@ -176,11 +176,11 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 gap-1.5 md:gap-2">
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Are You?</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Are You?</label>
                   <select
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813] bg-white"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813] bg-white"
                     value={formData.areYou}
                     onChange={(e) => setFormData({...formData, areYou: e.target.value})}
                   >
@@ -191,9 +191,9 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs md:text-sm font-medium mb-1">Gender</label>
+                  <label className="block text-[10px] md:text-xs font-medium mb-0.5">Gender</label>
                   <select
-                    className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813] bg-white"
+                    className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813] bg-white"
                     value={formData.gender}
                     onChange={(e) => setFormData({...formData, gender: e.target.value})}
                   >
@@ -205,8 +205,8 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 my-2">
-                <div className="bg-gray-200 text-sm md:text-base font-bold tracking-wider px-3 py-1.5 md:py-2 rounded flex gap-1 select-none">
+              <div className="flex items-center gap-1.5 my-1">
+                <div className="bg-gray-200 text-xs md:text-sm font-bold tracking-wider px-2.5 py-1 md:py-1.5 rounded flex gap-0.5 select-none">
                   <span className="text-[#2AB89D]">2</span>
                   <span className="text-[#E57373]">R</span>
                   <span className="text-[#7E57C2]">8</span>
@@ -215,14 +215,14 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
                   <span className="text-[#E57373]">M</span>
                 </div>
                 <button type="button" className="text-gray-600 hover:text-gray-800">
-                  <RefreshCw size={18} />
+                  <RefreshCw size={16} />
                 </button>
               </div>
 
               <input
                 type="text"
                 placeholder="Enter captcha"
-                className="w-full px-3 py-1.5 md:py-2 border border-gray-300 rounded-full text-xs md:text-sm outline-none focus:border-[#7F1813]"
+                className="w-full px-2 py-1 md:py-1.5 border border-gray-300 rounded-full text-[10px] md:text-xs outline-none focus:border-[#7F1813]"
                 required
                 value={formData.captcha}
                 onChange={(e) => setFormData({...formData, captcha: e.target.value})}
@@ -230,7 +230,7 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
 
               <button
                 type="submit"
-                className="w-full bg-black text-white font-semibold py-2 md:py-2.5 rounded-full hover:bg-gray-800 transition-colors text-sm md:text-base"
+                className="w-full bg-black text-white font-semibold py-1.5 md:py-2 rounded-full hover:bg-gray-800 transition-colors text-xs md:text-sm mt-1"
               >
                 Submit
               </button>
