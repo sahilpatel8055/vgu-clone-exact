@@ -11,6 +11,9 @@ import PedagogySection from "@/components/PedagogySection";
 import AdmissionProcessSection from "@/components/AdmissionProcessSection";
 import DegreeJourneySection from "@/components/DegreeJourneySection";
 import CommunitySection from "@/components/CommunitySection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 
 const Index = () => {
@@ -29,6 +32,9 @@ const Index = () => {
       <AdmissionProcessSection />
       <DegreeJourneySection />
       <CommunitySection />
+      <TestimonialsSection />
+      <FAQSection />
+      <Footer />
       <ChatWidget />
     </div>
   );
