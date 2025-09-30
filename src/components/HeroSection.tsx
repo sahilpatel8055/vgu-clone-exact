@@ -1,265 +1,255 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RefreshCw } from "lucide-react";
 import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
     email: "",
-    mobile: "",
+    phone: "",
     course: "",
     state: "",
     city: "",
-    areYou: "",
+    areyou: "",
     gender: "",
     captcha: ""
   });
 
+  const [captchaText] = useState("LTGJGS");
+
   const courses = [
-    "BA Economics",
-    "BA History", 
-    "BA Public Policy & Development",
-    "BA Political Science",
-    "BA English",
-    "BA Computer Application",
-    "BA International Relations",
-    "BBA General",
-    "BBA in Digital Marketing",
-    "BBA in Retail Management",
-    "BBA in Fintech Management",
-    "BCA General",
-    "BCA in AI",
-    "BCA in Data Science",
-    "BCA in Cloud Technology and Information Security",
-    "BCA in Blockchain Technology",
-    "BCA in UX",
-    "M.A. English",
-    "M.A. JMC",
-    "MBA General",
-    "MBA in HR Management",
-    "MBA in Marketing",
-    "MBA in Financial Management",
-    "MBA in Healthcare Management",
-    "MBA in Agri Business",
-    "MBA in IT Management",
-    "MBA in International Business Management",
-    "MBA in Operations Management",
-    "MBA IFM",
-    "MCA",
-    "M.Sc. Mathematics"
+    { value: "Bachelor of Arts in Economics", label: "BA Economics" },
+    { value: "Bachelor of Arts in History", label: "BA History" },
+    { value: "Bachelor of Arts in Public Policy & Development", label: "BA Public Policy & Development" },
+    { value: "Bachelor of Arts in Political Science", label: "BA Political Science" },
+    { value: "Bachelor of Arts in English", label: "BA English" },
+    { value: "Bachelor of Arts in Computer Application", label: "BA Computer Application" },
+    { value: "Bachelor of Arts in International Relations", label: "BA International Relations" },
+    { value: "Bachelor of Business Administration", label: "BBA General" },
+    { value: "Bachelor of Business Administration in Digital Marketing", label: "BBA in Digital Marketing" },
+    { value: "Bachelor of Business Administration in Retail Management", label: "BBA in Retail Management" },
+    { value: "Bachelor of Business Administration in Fintech Management", label: "BBA in Fintech Management" },
+    { value: "Bachelor of Computer Applications", label: "BCA General" },
+    { value: "Bachelor of Computer Applications in AI", label: "BCA in AI" },
+    { value: "Bachelor of Computer Applications in Data Science", label: "BCA in Data Science" },
+    { value: "Bachelor of Computer Applications in Cloud Technology and Information Security", label: "BCA in Cloud Technology and Information Security" },
+    { value: "Bachelor of Computer Applications in Blockchain", label: "BCA in Blockchain Technology" },
+    { value: "Bachelor of Computer Applications in UX", label: "BCA in UX" },
+    { value: "Master of Arts in English", label: "M.A. English" },
+    { value: "Master of Arts in Journalism and Mass Communication", label: "M.A. JMC" },
+    { value: "Master of Business Administration", label: "MBA General" },
+    { value: "Master of Business Administration in HR Management", label: "MBA in HR Management" },
+    { value: "Master of Business Administration in Marketing", label: "MBA in Marketing" },
+    { value: "Master of Business Administration in Financial Management", label: "MBA in Financial Management" },
+    { value: "Master of Business Administration in Healthcare Management", label: "MBA in Healthcare Management" },
+    { value: "Master of Business Administration in Agri Business", label: "MBA in Agri Business" },
+    { value: "Master of Business Administration in IT Management", label: "MBA in IT Management" },
+    { value: "Master of Business Administration in International Business Management", label: "MBA in International Business Management" },
+    { value: "Master of Business Administration in Operations Management", label: "MBA in Operations Management" },
+    { value: "Master of Business Administration in International Finance", label: "MBA IF" },
+    { value: "Master of Computer Applications", label: "MCA" },
+    { value: "Master of Science in Mathematics", label: "M.Sc. Mathematics" }
   ];
 
+  const states = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat",
+    "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh",
+    "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
+    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+  ];
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
+
   return (
-    <section className="relative bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center">
-        {/* Left Column - Hero Content */}
-        <div className="space-y-6">
-          <div className="space-y-4">
-            <h1 className="text-4xl lg:text-5xl font-bold text-vgu-gray-800 leading-tight">
-              Your Journey to the<br />
-              Top Begins at <span className="text-vgu-red">Online VGU</span>
-            </h1>
-            
-            <div className="flex items-center gap-4">
-              <img 
-                src="/assets/logos/logo.svg" 
-                alt="VGU" 
-                className="h-16 w-auto"
-              />
-              <div className="text-sm">
-                <div className="font-semibold text-vgu-gray-700">NORTH INDIA'S YOUNGEST</div>
-                <div className="font-bold text-2xl text-vgu-red">NAAC A+</div>
-                <div className="text-vgu-gray-600">ACCREDITED UNIVERSITY</div>
-              </div>
+    <section className="mt-20 px-4 sm:px-8 font-poppins font-medium">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8">
+        <div className="w-full md:w-1/2">
+          <Slider {...sliderSettings}>
+            <div>
+              <img alt="Slide 1" className="w-full h-full object-cover rounded-lg" src="/assets/hero/slide2M.webp" />
             </div>
-          </div>
-
-          {/* Rankings Section */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-orange-50 p-4 rounded-lg">
-              <div className="text-sm text-orange-600 font-medium">QS World University Rankings Asia 2025:</div>
-              <div className="text-sm">Ranked in the <span className="font-bold text-2xl text-orange-800">681-700</span> Band</div>
+            <div>
+              <img alt="Slide 2" className="w-full h-full object-cover rounded-lg" src="/assets/hero/slide3M.webp" />
             </div>
-            
-            <div className="space-y-2">
-              <div className="bg-red-50 p-3 rounded-lg text-center">
-                <div className="text-xs text-red-600">DHEI Rankings 2024</div>
-                <div className="text-2xl font-bold text-red-800">3rd</div>
-                <div className="text-xs text-red-600">IN PUNJAB</div>
-              </div>
-              
-              <div className="bg-red-50 p-3 rounded-lg text-center">
-                <div className="text-xs text-red-600">Graduate Outcomes</div>
-                <div className="text-2xl font-bold text-red-800">740</div>
-                <div className="text-xs text-red-600">DIAMOND LEAGUE</div>
-              </div>
-              
-              <div className="bg-red-50 p-3 rounded-lg text-center">
-                <div className="text-xs text-red-600">Private University</div>
-                <div className="text-2xl font-bold text-red-800">3rd</div>
-                <div className="text-xs text-red-600">IN PUNJAB</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Campus Image */}
-          <div className="relative">
-            <img 
-              src="/assets/hero/slide2M.webp" 
-              alt="VGU Campus" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
-            <div className="absolute bottom-4 right-4 bg-vgu-red text-white px-3 py-1 rounded text-sm font-semibold">
-              #BeAVGUite
-            </div>
-          </div>
+          </Slider>
         </div>
-
-        {/* Right Column - Form */}
-        <Card className="p-6 shadow-xl">
-          <div className="space-y-6">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-vgu-red mb-2">
-                Great Decision! Let's Connect With You Soon
-              </h2>
-            </div>
-
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="fullName">Full Name</Label>
-                  <Input 
-                    id="fullName"
+        
+        <div className="w-full md:w-1/2 max-w-md mx-auto md:mx-0">
+          <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-300">
+            <h2 className="text-2xl font-semibold mb-4 text-[#7F1813] text-center">
+              Great Decision! Let's Connect With You Soon
+            </h2>
+            
+            <form className="space-y-3" onSubmit={handleSubmit}>
+              <div className="flex gap-3">
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">Full Name</label>
+                  <input
                     placeholder="Enter your name"
-                    value={formData.fullName}
-                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm outline-none"
+                    required
+                    type="text"
+                    value={formData.firstName}
+                    name="firstName"
+                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input 
-                    id="email"
-                    type="email"
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">Email</label>
+                  <input
                     placeholder="Enter email"
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm outline-none"
+                    required
+                    type="email"
                     value={formData.email}
+                    name="email"
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
                 </div>
               </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="mobile">Mobile</Label>
-                  <Input 
-                    id="mobile"
+              
+              <div className="flex gap-3">
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">Mobile</label>
+                  <input
                     placeholder="Enter phone"
-                    value={formData.mobile}
-                    onChange={(e) => setFormData({...formData, mobile: e.target.value})}
+                    maxLength={10}
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm outline-none"
+                    required
+                    type="tel"
+                    value={formData.phone}
+                    name="phone"
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="course">Course</Label>
-                  <Select onValueChange={(value) => setFormData({...formData, course: value})}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a course" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {courses.map((course) => (
-                        <SelectItem key={course} value={course}>
-                          {course}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">Course</label>
+                  <select
+                    name="course"
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm"
+                    required
+                    value={formData.course}
+                    onChange={(e) => setFormData({...formData, course: e.target.value})}
+                  >
+                    <option value="">Select a course</option>
+                    {courses.map((course) => (
+                      <option key={course.value} value={course.value}>
+                        {course.label}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="state">State</Label>
-                  <Select onValueChange={(value) => setFormData({...formData, state: value})}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select state" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="punjab">Punjab</SelectItem>
-                      <SelectItem value="delhi">Delhi</SelectItem>
-                      <SelectItem value="haryana">Haryana</SelectItem>
-                      <SelectItem value="rajasthan">Rajasthan</SelectItem>
-                    </SelectContent>
-                  </Select>
+              
+              <div className="flex gap-3">
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">State</label>
+                  <select
+                    name="state"
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm"
+                    required
+                    value={formData.state}
+                    onChange={(e) => setFormData({...formData, state: e.target.value})}
+                  >
+                    <option value="">Select state</option>
+                    {states.map((state) => (
+                      <option key={state} value={state}>
+                        {state}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="city">City</Label>
-                  <Input 
-                    id="city"
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">City</label>
+                  <input
                     placeholder="Enter city"
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm"
+                    required
+                    type="text"
                     value={formData.city}
+                    name="city"
                     onChange={(e) => setFormData({...formData, city: e.target.value})}
                   />
                 </div>
               </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label>Are You?</Label>
-                  <Select onValueChange={(value) => setFormData({...formData, areYou: value})}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="-- Select --" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="student">Student</SelectItem>
-                      <SelectItem value="working">Working Professional</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+              
+              <div className="flex gap-3">
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">Are You?</label>
+                  <select
+                    name="areyou"
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm"
+                    value={formData.areyou}
+                    onChange={(e) => setFormData({...formData, areyou: e.target.value})}
+                  >
+                    <option value="">-- Select --</option>
+                    <option value="Student">Student</option>
+                    <option value="Working Professional">Working Professional</option>
+                    <option value="Parents">Parents</option>
+                  </select>
                 </div>
-                <div className="space-y-2">
-                  <Label>Gender</Label>
-                  <Select onValueChange={(value) => setFormData({...formData, gender: value})}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="-- Select --" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="w-1/2">
+                  <label className="block text-sm mb-1">Gender</label>
+                  <select
+                    name="gender"
+                    className="w-full p-2 border border-gray-300 rounded-3xl text-sm"
+                    value={formData.gender}
+                    onChange={(e) => setFormData({...formData, gender: e.target.value})}
+                  >
+                    <option value="">-- Select --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
               </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="bg-blue-500 text-white px-2 py-1 rounded text-sm font-mono">F</span>
-                  <span className="bg-red-500 text-white px-2 py-1 rounded text-sm font-mono">F</span>
-                  <span className="bg-green-500 text-white px-2 py-1 rounded text-sm font-mono">6</span>
-                  <span className="bg-yellow-500 text-white px-2 py-1 rounded text-sm font-mono">S</span>
-                  <span className="bg-purple-500 text-white px-2 py-1 rounded text-sm font-mono">H</span>
-                  <span className="bg-gray-500 text-white px-2 py-1 rounded text-sm font-mono">5</span>
-                  <svg width="20" height="20" className="ml-2">
-                    <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
+              
+              <div className="flex items-center my-3">
+                <div className="bg-gray-200 text-lg font-bold tracking-widest px-4 py-2 rounded flex gap-1 select-none">
+                  <span style={{color: "rgb(233, 196, 106)"}}>L</span>
+                  <span style={{color: "rgb(244, 162, 97)"}}>T</span>
+                  <span style={{color: "rgb(141, 153, 174)"}}>G</span>
+                  <span style={{color: "rgb(42, 157, 143)"}}>J</span>
+                  <span style={{color: "rgb(29, 53, 87)"}}>G</span>
+                  <span style={{color: "rgb(244, 162, 97)"}}>S</span>
                 </div>
-                <Input 
-                  placeholder="Enter captcha"
-                  value={formData.captcha}
-                  onChange={(e) => setFormData({...formData, captcha: e.target.value})}
-                />
+                <button type="button" className="ml-2">
+                  <RefreshCw size={24} />
+                </button>
               </div>
-
-              <Button 
-                type="submit" 
-                className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3"
+              
+              <input
+                placeholder="Enter captcha"
+                className="w-full px-3 py-2 border border-gray-300 rounded-3xl mb-2 outline-none"
+                type="text"
+                value={formData.captcha}
+                onChange={(e) => setFormData({...formData, captcha: e.target.value})}
+              />
+              
+              <button
+                type="submit"
+                className="border w-full rounded-3xl cursor-pointer bg-black text-white py-2 text-sm font-medium"
               >
                 Submit
-              </Button>
+              </button>
             </form>
           </div>
-        </Card>
+        </div>
       </div>
     </section>
   );

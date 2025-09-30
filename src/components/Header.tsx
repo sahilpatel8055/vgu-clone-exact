@@ -1,33 +1,31 @@
-import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm border-b">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-3">
-            <img 
-              src="/assets/logos/logo.svg" 
-              alt="VGU Logo" 
-              className="h-12 w-auto"
-            />
-            <img 
-              src="/assets/logos/naac.svg" 
-              alt="NAAC A+ Grade" 
-              className="h-12 w-auto"
-            />
-          </div>
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-gray-200">
+      <div className="flex justify-between items-center px-4 py-3 max-w-screen-xl mx-auto">
+        <div className="flex items-center space-x-4">
+          <a href="/" data-discover="true">
+            <img alt="logo" className="h-14 cursor-pointer" src="/assets/logos/logo.svg" />
+          </a>
+          <a href="/" data-discover="true">
+            <img alt="NAAC logo" className="h-10" src="/assets/logos/naac.svg" />
+          </a>
         </div>
-        
-        <div className="flex items-center gap-4">
-          <Button 
-            className="bg-vgu-red hover:bg-vgu-red-dark text-white font-semibold px-6 py-2"
-          >
-            Apply Now
-          </Button>
-        </div>
+        <nav className="hidden lg:block">
+          <ul className="flex items-center space-x-8 font-bold text-lg text-gray-700">
+            <li>
+              <button className="custom-btn-bg text-white px-6 py-2 rounded-lg transition duration-200 font-poppins cursor-pointer">
+                Apply Now
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button className="lg:hidden focus:outline-none" aria-label="Toggle menu">
+          <Menu size={30} />
+        </button>
       </div>
-    </header>
+    </div>
   );
 };
 

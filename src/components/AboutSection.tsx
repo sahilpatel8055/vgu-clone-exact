@@ -1,77 +1,28 @@
-import { Card } from "@/components/ui/card";
-
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Image */}
-          <div className="relative">
-            <img 
-              src="/assets/hero/slide3M.webp" 
-              alt="VGU Campus Life" 
-              className="w-full h-96 object-cover rounded-2xl shadow-xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+    <section className="px-6 py-10 md:py-16 lg:py-20 bg-white" id="who-we-are">
+      <div className="grid md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+        <div className="rounded-2xl overflow-hidden shadow-lg">
+          <img
+            alt="Vivekananda Global University Campus"
+            className="w-full h-auto max-h-[500px] object-cover md:max-h-[600px] lg:max-h-[700px]"
+            src="/whoweare-DxdwyeV8.webp"
+          />
+        </div>
+        <div className="text-center md:text-left">
+          <h2 className="custom-heading-text">
+            <span className="custom-text-gradient">Who</span> We Are
+          </h2>
+          <div className="flex justify-center md:justify-start">
+            <hr className="w-1/2 h-[3px] bg-[#7F1813] border-0 rounded mt-1" />
           </div>
-
-          {/* Right Column - Content */}
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-4xl font-bold text-vgu-gray-800 mb-4">
-                Who <span className="text-vgu-red">We Are</span>
-              </h2>
-              <p className="text-lg text-vgu-gray-600 leading-relaxed">
-                VGU is North India's youngest NAAC A+ accredited university, committed to providing 
-                world-class education through innovative online learning platforms. We bridge the gap 
-                between traditional education and modern industry requirements.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="p-6 text-center border-vgu-red/20">
-                <div className="text-3xl font-bold text-vgu-red mb-2">50+</div>
-                <div className="text-sm text-vgu-gray-600">Expert Faculty</div>
-              </Card>
-              
-              <Card className="p-6 text-center border-vgu-red/20">
-                <div className="text-3xl font-bold text-vgu-red mb-2">10K+</div>
-                <div className="text-sm text-vgu-gray-600">Students Enrolled</div>
-              </Card>
-              
-              <Card className="p-6 text-center border-vgu-red/20">
-                <div className="text-3xl font-bold text-vgu-red mb-2">95%</div>
-                <div className="text-sm text-vgu-gray-600">Placement Rate</div>
-              </Card>
-              
-              <Card className="p-6 text-center border-vgu-red/20">
-                <div className="text-3xl font-bold text-vgu-red mb-2">500+</div>
-                <div className="text-sm text-vgu-gray-600">Industry Partners</div>
-              </Card>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-vgu-gray-800">Why Choose VGU Online?</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vgu-red rounded-full"></div>
-                  <span className="text-vgu-gray-600">Industry-aligned curriculum</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vgu-red rounded-full"></div>
-                  <span className="text-vgu-gray-600">Expert faculty with industry experience</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vgu-red rounded-full"></div>
-                  <span className="text-vgu-gray-600">Flexible learning schedules</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-vgu-red rounded-full"></div>
-                  <span className="text-vgu-gray-600">100% placement assistance</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <p className="custom-subheading-text">Your Gateway to Future-Ready Learning!</p>
+          <p className="mt-4 leading-relaxed text-justify">
+            Online VGU is a <strong>digital initiative of NAAC A+ accredited</strong> Vivekananda Global University, Jaipur offering <strong>UGC-Entitled</strong> online degree programs empowering over thousands of learners through <strong>globally trusted VGU education</strong> with greater <strong>flexibility, affordability and accessibility.</strong>
+          </p>
+          <p className="mt-2 leading-relaxed text-justify">
+            Our degrees are globally recognized and hold the same value as regular on-campus programs. Whether you're upskilling, reskilling, or starting fresh, our <strong>learner-centric approach</strong> ensures you gain the knowledge, credentials, and confidence to succeed — anytime, anywhere.
+          </p>
         </div>
       </div>
     </section>

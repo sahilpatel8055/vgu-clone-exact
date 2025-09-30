@@ -60,6 +60,56 @@
     --gradient-announcement: linear-gradient(90deg, hsl(var(--vgu-red)), hsl(var(--vgu-red-light)));
   }
 
+/* Custom VGU Styles */
+.custom-btn-bg {
+  background: linear-gradient(135deg, #7F1813, #B3241A);
+}
+
+.custom-heading-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.custom-text-gradient {
+  background: linear-gradient(135deg, #7F1813, #B3241A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.custom-subheading-text {
+  font-size: 1.125rem;
+  color: #666;
+  margin-top: 0.75rem;
+}
+
+/* Slick slider custom dots */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.slick-dots li {
+  margin: 0;
+}
+
+.slick-dots .dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: #D1D5DB;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slick-dots .slick-active .dot {
+  background-color: #7F1813;
+}
+
   .dark {
     --background: 0 0% 9%;
     --foreground: 0 0% 98%;
