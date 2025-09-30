@@ -22,7 +22,7 @@ const DegreeJourneySection = () => {
     >
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
         <div className="flex-1 flex flex-col justify-center items-center">
-          <h2 className="custom-heading-text mb-8 leading-tight max-w-xl text-center md:text-start">
+          <h2 className="custom-heading-text text-white mb-8 leading-tight max-w-xl text-center md:text-start">
             Navigate The Road To Your Dream Degree From Enrollment To Graduation
           </h2>
           <img

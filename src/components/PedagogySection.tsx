@@ -34,13 +34,13 @@ const PedagogySection = () => {
       >
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
           <div className="w-full lg:w-3/5">
-            <h2 className="custom-heading-text mb-1 tracking-wide text-center">
+            <h2 className="custom-heading-text text-white mb-1 tracking-wide text-center">
               Our Pedagogy & Learning Experience
             </h2>
             <div className="flex justify-center md:justify-start">
               <hr className="w-full h-[3px] bg-white border-0 rounded mt-2" />
             </div>
-            <p className="custom-subheading-text text-center tracking-wide leading-relaxed">
+            <p className="custom-subheading-text text-white text-center tracking-wide leading-relaxed">
               Empowering every learner through innovation and support
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
