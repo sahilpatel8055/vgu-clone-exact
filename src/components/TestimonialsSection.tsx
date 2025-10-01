@@ -12,11 +12,14 @@ const TestimonialsSection = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
+    centerMode: false,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
           arrows: true,
           dots: true,
         },
@@ -25,8 +28,11 @@ const TestimonialsSection = () => {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           arrows: true,
           dots: true,
+          centerMode: false,
+          centerPadding: '0px',
         },
       },
     ],

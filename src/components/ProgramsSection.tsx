@@ -120,6 +120,8 @@ const ProgramsSection = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
+    centerMode: false,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1280,
@@ -142,6 +144,8 @@ const ProgramsSection = () => {
           slidesToScroll: 1,
           arrows: true,
           dots: true,
+          centerMode: false,
+          centerPadding: '0px',
         },
       },
     ],
