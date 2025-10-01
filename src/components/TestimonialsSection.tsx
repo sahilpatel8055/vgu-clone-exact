@@ -22,10 +22,10 @@ const TestimonialsSection = () => {
           slidesToScroll: 1,
           arrows: true,
           dots: true,
-        },
+        }
       },
       {
-        breakpoint: 768,
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -33,9 +33,9 @@ const TestimonialsSection = () => {
           dots: true,
           centerMode: false,
           centerPadding: '0px',
-        },
-      },
-    ],
+        }
+      }
+    ]
   };
 
   const testimonials = [
