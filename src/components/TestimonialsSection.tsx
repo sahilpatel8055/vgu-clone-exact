@@ -25,6 +25,18 @@ const TestimonialsSection = () => {
         }
       },
       {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: false,
+          centerMode: false,
+          centerPadding: '0',
+          variableWidth: false,
+        }
+      },
+      {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
