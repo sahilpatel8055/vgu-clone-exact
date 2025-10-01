@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Clock, IndianRupee, BookOpen } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CounselingFormDialog from "./CounselingFormDialog";
 
 interface Program {
@@ -111,11 +111,26 @@ const programs: Program[] = [
 
 const ProgramsSection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+  useEffect(() => {
+    const updateSlides = () => {
+      const w = window.innerWidth;
+      if (w < 768) setSlidesToShow(1);
+      else if (w < 1024) setSlidesToShow(2);
+      else if (w < 1280) setSlidesToShow(3);
+      else setSlidesToShow(4);
+    };
+    updateSlides();
+    window.addEventListener('resize', updateSlides);
+    return () => window.removeEventListener('resize', updateSlides);
+  }, []);
+
   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -187,7 +202,7 @@ const ProgramsSection = () => {
         </div>
 
         <div className="programs-slider">
-          <Slider {...sliderSettings}>
+          <Slider key={slidesToShow} {...sliderSettings}>
             {programs.map((program) => (
               <div key={program.id} className="p-3">
                 <div className="relative bg-white rounded-xl shadow-md h-[390px] flex flex-col justify-between">
