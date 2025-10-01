@@ -17,7 +17,7 @@ const RankingsSection = () => {
   ];
 
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
@@ -46,7 +46,7 @@ const RankingsSection = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          dots: true,
+          dots: false,
           centerMode: false,
           centerPadding: '0px',
           variableWidth: false,

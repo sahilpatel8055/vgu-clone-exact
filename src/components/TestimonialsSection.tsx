@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TestimonialsSection = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -21,7 +21,7 @@ const TestimonialsSection = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           arrows: true,
-          dots: true,
+          dots: false,
         }
       },
       {
@@ -30,7 +30,7 @@ const TestimonialsSection = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          dots: true,
+          dots: false,
           centerMode: false,
           centerPadding: '0px',
           variableWidth: false,
