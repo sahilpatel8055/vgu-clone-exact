@@ -86,41 +86,38 @@ const RankingsSection = () => {
         .rankings-slider-container .slick-prev,
         .rankings-slider-container .slick-next {
           z-index: 10;
-          width: 50px;
-          height: 50px;
-          background: white;
-          border-radius: 50%;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          width: 40px;
+          height: 40px;
+          background: transparent;
         }
         
         .rankings-slider-container .slick-prev {
-          left: 10px;
+          left: -10px;
         }
         
         .rankings-slider-container .slick-next {
-          right: 10px;
+          right: -10px;
         }
         
         .rankings-slider-container .slick-prev:hover,
         .rankings-slider-container .slick-next:hover {
-          background: white;
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+          background: transparent;
         }
         
         .rankings-slider-container .slick-prev:before,
         .rankings-slider-container .slick-next:before {
-          font-size: 28px;
-          color: #7F1813;
-          font-weight: bold;
+          font-size: 40px;
+          color: #000;
+          opacity: 1;
         }
         
         @media (max-width: 640px) {
           .rankings-slider-container .slick-prev {
-            left: 5px;
+            left: -5px;
           }
           
           .rankings-slider-container .slick-next {
-            right: 5px;
+            right: -5px;
           }
         }
         

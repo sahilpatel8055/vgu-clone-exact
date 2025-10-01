@@ -185,6 +185,7 @@ const ProgramsSection = () => {
 
   return (
     <section
+      id="programs"
       className="relative py-20 bg-cover bg-center"
       style={{
         backgroundImage: "linear-gradient(rgba(127, 24, 19, 0.9), rgba(127, 24, 19, 0.9))",
@@ -262,42 +263,38 @@ const ProgramsSection = () => {
         .programs-slider .slick-prev,
         .programs-slider .slick-next {
           z-index: 10;
-          width: 50px;
-          height: 50px;
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 50%;
-          backdrop-filter: blur(10px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          width: 40px;
+          height: 40px;
+          background: transparent;
         }
         
         .programs-slider .slick-prev {
-          left: 10px;
+          left: -10px;
         }
         
         .programs-slider .slick-next {
-          right: 10px;
+          right: -10px;
         }
         
         .programs-slider .slick-prev:hover,
         .programs-slider .slick-next:hover {
-          background: rgba(255, 255, 255, 0.5);
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+          background: transparent;
         }
         
         .programs-slider .slick-prev:before,
         .programs-slider .slick-next:before {
-          font-size: 28px;
+          font-size: 40px;
           color: white;
-          font-weight: bold;
+          opacity: 1;
         }
         
         @media (max-width: 640px) {
           .programs-slider .slick-prev {
-            left: 5px;
+            left: -5px;
           }
           
           .programs-slider .slick-next {
-            right: 5px;
+            right: -5px;
           }
         }
         
@@ -315,7 +312,7 @@ const ProgramsSection = () => {
           opacity: 0.5;
         }
         
-        .programs-slider .slick-dots li.slick-active button:before {
+        .programs-slider .slick-active button:before {
           opacity: 1;
           color: white;
         }

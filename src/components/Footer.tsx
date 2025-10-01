@@ -65,42 +65,66 @@ const Footer = () => {
           <div className="h-[2px] w-14 bg-white mb-4 mx-auto md:mx-0"></div>
           <ul className="space-y-2">
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online BBA
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online BCA
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online BA
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online MBA
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online MCA
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online M.Sc.
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online M.A. English
               </button>
             </li>
             <li>
-              <button className="hover:underline text-left w-full cursor-pointer">
+              <button 
+                onClick={() => scrollToSection("programs")}
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
+              >
                 Online M.A. JMC
               </button>
             </li>
