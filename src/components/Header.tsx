@@ -4,6 +4,8 @@ import CounselingFormDialog from "./CounselingFormDialog";
 
 const Header = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-gray-200">
       <div className="flex justify-between items-center px-4 py-3 max-w-screen-xl mx-auto">
@@ -27,9 +29,28 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button className="lg:hidden focus:outline-none" aria-label="Toggle menu">
-          <Menu size={30} />
-        </button>
+        <div className="lg:hidden relative">
+          <button 
+            className="focus:outline-none" 
+            aria-label="Toggle menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Menu size={30} />
+          </button>
+          {isMobileMenuOpen && (
+            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+              <button
+                onClick={() => {
+                  setIsFormOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 font-semibold rounded-t-lg"
+              >
+                Apply Now
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <CounselingFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
     </div>
