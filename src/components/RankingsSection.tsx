@@ -72,7 +72,7 @@ const RankingsSection = () => {
               <div className="rounded-3xl shadow-lg mb-6">
                 <img
                   alt={ranking.alt}
-                  className="w-full h-auto object-contain mx-auto md:scale-100 scale-125"
+                  className="w-full h-auto object-contain mx-auto scale-90"
                   src={ranking.src}
                 />
               </div>
