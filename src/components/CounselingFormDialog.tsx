@@ -72,7 +72,7 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
-        className="max-w-[95vw] md:max-w-3xl p-0 gap-0 bg-transparent border-none overflow-y-auto h-[115vh] max-h-[115vh] md:h-auto md:max-h-[85vh]"
+        className="max-w-[95vw] md:max-w-3xl p-0 gap-0 bg-transparent border-none overflow-y-auto my-auto inset-y-0 h-auto max-h-[115vh] md:max-h-[85vh] py-[5vh] md:py-0"
         onInteractOutside={(e) => e.preventDefault()}
       >
         <div className="flex flex-col md:flex-row h-fit bg-white rounded-lg overflow-hidden w-full">
