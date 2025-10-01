@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DegreeJourneySection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -6,6 +6,14 @@ const DegreeJourneySection = () => {
     { src: "/degreeFront-D96DoZYM.webp", alt: "Degree Front" },
     { src: "/degreeBack-CRXE7rMI.webp", alt: "Degree Back" },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);

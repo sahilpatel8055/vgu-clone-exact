@@ -33,6 +33,7 @@ const TestimonialsSection = () => {
           dots: true,
           centerMode: false,
           centerPadding: '0px',
+          variableWidth: false,
         }
       }
     ]
@@ -77,29 +78,33 @@ const TestimonialsSection = () => {
         .testimonials-slider-container .slick-prev,
         .testimonials-slider-container .slick-next {
           z-index: 10;
-          width: 40px;
-          height: 40px;
-          background: transparent;
+          width: 50px;
+          height: 50px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 50%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .testimonials-slider-container .slick-prev {
-          left: -10px;
+          left: 10px;
         }
         
         .testimonials-slider-container .slick-next {
-          right: -10px;
+          right: 10px;
         }
         
         .testimonials-slider-container .slick-prev:hover,
         .testimonials-slider-container .slick-next:hover {
-          background: transparent;
+          background: rgba(255, 255, 255, 1);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         
         .testimonials-slider-container .slick-prev:before,
         .testimonials-slider-container .slick-next:before {
-          font-size: 40px;
-          color: white;
+          font-size: 28px;
+          color: #7F1813;
           opacity: 1;
+          font-weight: bold;
         }
         
         @media (max-width: 640px) {

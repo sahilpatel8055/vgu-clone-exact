@@ -44,7 +44,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("about")}
-                className="hover:underline text-left w-full cursor-pointer"
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
               >
                 About VGU
               </button>
@@ -52,7 +52,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("testimonials")}
-                className="hover:underline text-left w-full cursor-pointer"
+                className="hover:underline text-left md:text-left text-center w-full cursor-pointer"
               >
                 Testimonials
               </button>
