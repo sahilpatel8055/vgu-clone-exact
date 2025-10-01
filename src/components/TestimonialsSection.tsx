@@ -31,8 +31,8 @@ const TestimonialsSection = () => {
           slidesToScroll: 1,
           arrows: true,
           dots: false,
-          centerMode: true,
-          centerPadding: '40px',
+          centerMode: false,
+          centerPadding: '0px',
           variableWidth: false,
         }
       }
@@ -61,8 +61,8 @@ const TestimonialsSection = () => {
         </p>
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="px-3 md:px-3 px-0">
-              <div className="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300 mx-3 md:mx-0">
+            <div key={testimonial.id} className="px-3">
+              <div className="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300">
                 <img
                   alt={`Testimonial ${testimonial.id}`}
                   className="w-full h-auto object-cover"
