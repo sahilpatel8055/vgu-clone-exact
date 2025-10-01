@@ -78,19 +78,19 @@ const TestimonialsSection = () => {
         .testimonials-slider-container .slick-prev,
         .testimonials-slider-container .slick-next {
           z-index: 10;
-          width: 50px;
-          height: 50px;
-          background: rgba(255, 255, 255, 0.9);
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.95);
           border-radius: 50%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         
         .testimonials-slider-container .slick-prev {
-          left: 10px;
+          left: -20px;
         }
         
         .testimonials-slider-container .slick-next {
-          right: 10px;
+          right: -20px;
         }
         
         .testimonials-slider-container .slick-prev:hover,
@@ -108,12 +108,18 @@ const TestimonialsSection = () => {
         }
         
         @media (max-width: 640px) {
+          .testimonials-slider-container .slick-prev,
+          .testimonials-slider-container .slick-next {
+            width: 35px;
+            height: 35px;
+          }
+          
           .testimonials-slider-container .slick-prev {
-            left: -5px;
+            left: -10px;
           }
           
           .testimonials-slider-container .slick-next {
-            right: -5px;
+            right: -10px;
           }
         }
         

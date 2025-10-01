@@ -263,19 +263,19 @@ const ProgramsSection = () => {
         .programs-slider .slick-prev,
         .programs-slider .slick-next {
           z-index: 10;
-          width: 50px;
-          height: 50px;
-          background: rgba(255, 255, 255, 0.9);
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.95);
           border-radius: 50%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         
         .programs-slider .slick-prev {
-          left: 10px;
+          left: -20px;
         }
         
         .programs-slider .slick-next {
-          right: 10px;
+          right: -20px;
         }
         
         .programs-slider .slick-prev:hover,
@@ -293,12 +293,18 @@ const ProgramsSection = () => {
         }
         
         @media (max-width: 640px) {
+          .programs-slider .slick-prev,
+          .programs-slider .slick-next {
+            width: 35px;
+            height: 35px;
+          }
+          
           .programs-slider .slick-prev {
-            left: -5px;
+            left: -10px;
           }
           
           .programs-slider .slick-next {
-            right: -5px;
+            right: -10px;
           }
         }
         
