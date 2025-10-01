@@ -128,6 +128,7 @@ const ProgramsSection = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
       {
@@ -135,6 +136,17 @@ const ProgramsSection = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: true,
+          centerMode: false,
         },
       },
       {
@@ -145,7 +157,6 @@ const ProgramsSection = () => {
           arrows: true,
           dots: true,
           centerMode: false,
-          centerPadding: '0px',
         },
       },
     ],
