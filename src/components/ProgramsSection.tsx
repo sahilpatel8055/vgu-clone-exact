@@ -140,7 +140,8 @@ const ProgramsSection = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
+          arrows: true,
+          dots: true,
         },
       },
     ],
@@ -246,6 +247,40 @@ const ProgramsSection = () => {
         .programs-slider .slick-prev:before,
         .programs-slider .slick-next:before {
           font-size: 32px;
+          color: white;
+        }
+        
+        @media (max-width: 640px) {
+          .programs-slider .slick-prev {
+            left: 10px;
+          }
+          
+          .programs-slider .slick-next {
+            right: 10px;
+          }
+          
+          .programs-slider .slick-prev:before,
+          .programs-slider .slick-next:before {
+            font-size: 28px;
+          }
+        }
+        
+        .programs-slider .slick-dots {
+          bottom: -35px;
+        }
+        
+        .programs-slider .slick-dots li {
+          margin: 0 4px;
+        }
+        
+        .programs-slider .slick-dots li button:before {
+          font-size: 10px;
+          color: white;
+          opacity: 0.5;
+        }
+        
+        .programs-slider .slick-dots li.slick-active button:before {
+          opacity: 1;
           color: white;
         }
       `}</style>

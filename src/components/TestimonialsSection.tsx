@@ -4,24 +4,29 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TestimonialsSection = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          arrows: true,
+          dots: true,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          arrows: true,
+          dots: true,
         },
       },
     ],
@@ -38,8 +43,8 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-vgu-red py-12" id="testimonials">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+    <section className="w-full bg-vgu-red py-12 pb-16" id="testimonials">
+      <div className="max-w-6xl mx-auto px-4 text-center testimonials-slider-container">
         <h2 className="custom-heading-text text-white">Learner Testimonials</h2>
         <div className="flex justify-center">
           <hr className="md:w-1/2 w-1/2 h-[3px] bg-white border-0 rounded" />
@@ -61,6 +66,63 @@ const TestimonialsSection = () => {
           ))}
         </Slider>
       </div>
+      
+      <style>{`
+        .testimonials-slider-container .slick-prev,
+        .testimonials-slider-container .slick-next {
+          z-index: 10;
+          width: 40px;
+          height: 40px;
+        }
+        
+        .testimonials-slider-container .slick-prev {
+          left: -10px;
+        }
+        
+        .testimonials-slider-container .slick-next {
+          right: -10px;
+        }
+        
+        .testimonials-slider-container .slick-prev:before,
+        .testimonials-slider-container .slick-next:before {
+          font-size: 32px;
+          color: white;
+        }
+        
+        @media (max-width: 640px) {
+          .testimonials-slider-container .slick-prev {
+            left: 10px;
+          }
+          
+          .testimonials-slider-container .slick-next {
+            right: 10px;
+          }
+          
+          .testimonials-slider-container .slick-prev:before,
+          .testimonials-slider-container .slick-next:before {
+            font-size: 28px;
+          }
+        }
+        
+        .testimonials-slider-container .slick-dots {
+          bottom: -35px;
+        }
+        
+        .testimonials-slider-container .slick-dots li {
+          margin: 0 4px;
+        }
+        
+        .testimonials-slider-container .slick-dots li button:before {
+          font-size: 10px;
+          color: white;
+          opacity: 0.5;
+        }
+        
+        .testimonials-slider-container .slick-dots li.slick-active button:before {
+          opacity: 1;
+          color: white;
+        }
+      `}</style>
     </section>
   );
 };
