@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="w-full bg-vgu-red py-12 pb-16" id="testimonials">
-      <div className="max-w-6xl mx-auto px-4 text-center testimonials-slider-container">
+      <div className="max-w-6xl mx-auto px-4 md:px-12 text-center testimonials-slider-container">
         <h2 className="custom-heading-text text-white">Learner Testimonials</h2>
         <div className="flex justify-center">
           <hr className="md:w-1/2 w-1/2 h-[3px] bg-white border-0 rounded" />
@@ -86,11 +86,11 @@ const TestimonialsSection = () => {
         }
         
         .testimonials-slider-container .slick-prev {
-          left: -20px;
+          left: 0;
         }
         
         .testimonials-slider-container .slick-next {
-          right: -20px;
+          right: 0;
         }
         
         .testimonials-slider-container .slick-prev:hover,
@@ -110,16 +110,16 @@ const TestimonialsSection = () => {
         @media (max-width: 640px) {
           .testimonials-slider-container .slick-prev,
           .testimonials-slider-container .slick-next {
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
           }
           
           .testimonials-slider-container .slick-prev {
-            left: -10px;
+            left: -5px;
           }
           
           .testimonials-slider-container .slick-next {
-            right: -10px;
+            right: -5px;
           }
         }
         

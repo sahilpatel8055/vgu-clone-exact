@@ -72,10 +72,10 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
-        className="max-w-[80vw] md:max-w-3xl p-0 gap-0 bg-transparent border-none overflow-hidden h-auto max-h-[95vh]"
+        className="max-w-[85vw] md:max-w-3xl p-0 gap-0 bg-transparent border-none overflow-hidden h-auto max-h-[90vh]"
         onInteractOutside={(e) => e.preventDefault()}
       >
-        <div className="flex flex-col md:flex-row h-full bg-white rounded-lg overflow-hidden w-full max-h-[95vh] min-h-[70vh] md:min-h-0">
+        <div className="flex flex-col md:flex-row h-full bg-white rounded-lg overflow-hidden w-full max-h-[90vh] min-h-[80vh] md:min-h-0">
           {/* Left side - Campus image (desktop only) */}
           <div className="hidden md:block md:w-1/2 relative min-h-[550px]">
             <img 

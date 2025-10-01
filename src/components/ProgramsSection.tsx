@@ -202,7 +202,7 @@ const ProgramsSection = () => {
           </p>
         </div>
 
-        <div className="programs-slider">
+        <div className="programs-slider px-8 md:px-12">
           <Slider key={slidesToShow} {...sliderSettings}>
             {programs.map((program) => (
               <div key={program.id} className="p-3">
@@ -271,11 +271,11 @@ const ProgramsSection = () => {
         }
         
         .programs-slider .slick-prev {
-          left: -20px;
+          left: 0;
         }
         
         .programs-slider .slick-next {
-          right: -20px;
+          right: 0;
         }
         
         .programs-slider .slick-prev:hover,
@@ -295,16 +295,16 @@ const ProgramsSection = () => {
         @media (max-width: 640px) {
           .programs-slider .slick-prev,
           .programs-slider .slick-next {
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
           }
           
           .programs-slider .slick-prev {
-            left: -10px;
+            left: -5px;
           }
           
           .programs-slider .slick-next {
-            right: -10px;
+            right: -5px;
           }
         }
         
