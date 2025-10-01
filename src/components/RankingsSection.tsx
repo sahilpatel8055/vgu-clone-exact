@@ -47,8 +47,8 @@ const RankingsSection = () => {
           slidesToScroll: 1,
           arrows: true,
           dots: false,
-          centerMode: false,
-          centerPadding: '0px',
+          centerMode: true,
+          centerPadding: '40px',
           variableWidth: false,
         }
       }
@@ -70,8 +70,8 @@ const RankingsSection = () => {
       <div className="relative max-w-7xl mx-auto rankings-slider-container">
         <Slider {...sliderSettings}>
           {rankings.map((ranking, index) => (
-            <div key={index} className="px-2">
-              <div className="rounded-3xl shadow-lg mb-6">
+            <div key={index} className="px-2 md:px-2 px-0">
+              <div className="rounded-3xl shadow-lg mb-6 mx-2 md:mx-0">
                 <img
                   alt={ranking.alt}
                   className="w-full h-auto object-contain mx-auto scale-90"
