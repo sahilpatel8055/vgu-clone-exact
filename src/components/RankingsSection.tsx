@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -16,11 +17,20 @@ const RankingsSection = () => {
     { alt: "ranking-9", src: "/excellence-BPNbhJpO.webp" }
   ];
 
+  const [slides, setSlides] = useState(5);
+
+  useEffect(() => {
+    const update = () => setSlides(window.innerWidth < 1024 ? 1 : 5);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
   const sliderSettings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: slides,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -78,7 +88,7 @@ const RankingsSection = () => {
       </div>
       
       <div className="relative max-w-7xl mx-auto rankings-slider-container">
-        <Slider {...sliderSettings}>
+        <Slider key={slides} {...sliderSettings}>
           {rankings.map((ranking, index) => (
             <div key={index} className="px-2">
               <div className="rounded-3xl shadow-lg mb-6">

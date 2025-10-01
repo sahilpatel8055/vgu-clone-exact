@@ -1,13 +1,22 @@
 import Slider from "react-slick";
+import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const TestimonialsSection = () => {
+  const [slides, setSlides] = useState(3);
+  useEffect(() => {
+    const update = () => setSlides(window.innerWidth < 1024 ? 1 : 3);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slides,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -71,7 +80,7 @@ const TestimonialsSection = () => {
         <p className="custom-subheading-text text-white mb-12">
           2 out of every 3 VGU learners are employed while studying!
         </p>
-        <Slider {...settings}>
+        <Slider key={slides} {...settings}>
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="px-3">
               <div className="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300">
