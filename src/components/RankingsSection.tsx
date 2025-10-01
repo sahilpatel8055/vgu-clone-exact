@@ -24,6 +24,7 @@ const RankingsSection = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -40,10 +41,13 @@ const RankingsSection = () => {
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 640,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: true,
+          dots: true,
+          centerMode: false,
         }
       }
     ]
@@ -61,14 +65,14 @@ const RankingsSection = () => {
         <p className="custom-subheading-text">Here's why VGU Online is a trusted name in quality education</p>
       </div>
       
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto rankings-slider-container">
         <Slider {...sliderSettings}>
           {rankings.map((ranking, index) => (
             <div key={index} className="px-2">
               <div className="rounded-3xl shadow-lg mb-6">
                 <img
                   alt={ranking.alt}
-                  className="w-full h-auto object-contain mx-auto"
+                  className="w-full h-auto object-contain mx-auto md:scale-100 scale-125"
                   src={ranking.src}
                 />
               </div>
@@ -76,6 +80,63 @@ const RankingsSection = () => {
           ))}
         </Slider>
       </div>
+      
+      <style>{`
+        .rankings-slider-container .slick-prev,
+        .rankings-slider-container .slick-next {
+          z-index: 10;
+          width: 40px;
+          height: 40px;
+        }
+        
+        .rankings-slider-container .slick-prev {
+          left: -10px;
+        }
+        
+        .rankings-slider-container .slick-next {
+          right: -10px;
+        }
+        
+        .rankings-slider-container .slick-prev:before,
+        .rankings-slider-container .slick-next:before {
+          font-size: 32px;
+          color: #7F1813;
+        }
+        
+        @media (max-width: 640px) {
+          .rankings-slider-container .slick-prev {
+            left: 10px;
+          }
+          
+          .rankings-slider-container .slick-next {
+            right: 10px;
+          }
+          
+          .rankings-slider-container .slick-prev:before,
+          .rankings-slider-container .slick-next:before {
+            font-size: 28px;
+          }
+        }
+        
+        .rankings-slider-container .slick-dots {
+          bottom: -35px;
+        }
+        
+        .rankings-slider-container .slick-dots li {
+          margin: 0 4px;
+        }
+        
+        .rankings-slider-container .slick-dots li button:before {
+          font-size: 10px;
+          color: #7F1813;
+          opacity: 0.5;
+        }
+        
+        .rankings-slider-container .slick-dots li.slick-active button:before {
+          opacity: 1;
+          color: #7F1813;
+        }
+      `}</style>
     </div>
   );
 };
