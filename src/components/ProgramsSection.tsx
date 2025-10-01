@@ -267,11 +267,11 @@ const ProgramsSection = () => {
         }
         
         .programs-slider .slick-prev {
-          left: -10px;
+          left: -20px;
         }
         
         .programs-slider .slick-next {
-          right: -10px;
+          right: -20px;
         }
         
         .programs-slider .slick-prev:before,

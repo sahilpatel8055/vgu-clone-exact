@@ -82,11 +82,11 @@ const TestimonialsSection = () => {
         }
         
         .testimonials-slider-container .slick-prev {
-          left: -10px;
+          left: -20px;
         }
         
         .testimonials-slider-container .slick-next {
-          right: -10px;
+          right: -20px;
         }
         
         .testimonials-slider-container .slick-prev:before,

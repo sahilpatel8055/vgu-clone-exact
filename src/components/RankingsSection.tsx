@@ -90,11 +90,11 @@ const RankingsSection = () => {
         }
         
         .rankings-slider-container .slick-prev {
-          left: -10px;
+          left: -20px;
         }
         
         .rankings-slider-container .slick-next {
-          right: -10px;
+          right: -20px;
         }
         
         .rankings-slider-container .slick-prev:before,

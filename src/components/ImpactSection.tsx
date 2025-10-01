@@ -78,7 +78,7 @@ const ImpactSection = () => {
       
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
         <div className="bg-white text-black text-center py-8 px-4 rounded-2xl shadow-lg">
-          <p className="text-5xl md:text-6xl font-bold mb-3 text-[#761610]">
+          <p className="text-4xl md:text-5xl font-bold mb-3 text-[#761610]">
             <CountUp end={90} suffix="%" />
           </p>
           <p className="text-sm md:text-base font-medium font-poppins">
@@ -87,7 +87,7 @@ const ImpactSection = () => {
         </div>
         
         <div className="bg-white text-black text-center py-8 px-4 rounded-2xl shadow-lg">
-          <p className="text-5xl md:text-6xl font-bold mb-3 text-[#761610]">
+          <p className="text-4xl md:text-5xl font-bold mb-3 text-[#761610]">
             <CountUp end={4} />
           </p>
           <p className="text-sm md:text-base font-medium font-poppins">
@@ -96,7 +96,7 @@ const ImpactSection = () => {
         </div>
         
         <div className="bg-white text-black text-center py-8 px-4 rounded-2xl shadow-lg">
-          <p className="text-5xl md:text-6xl font-bold mb-3 text-[#761610]">
+          <p className="text-4xl md:text-5xl font-bold mb-3 text-[#761610]">
             <CountUp end={88} suffix="%" />
           </p>
           <p className="text-sm md:text-base font-medium font-poppins">
@@ -105,7 +105,7 @@ const ImpactSection = () => {
         </div>
         
         <div className="bg-white text-black text-center py-8 px-4 rounded-2xl shadow-lg">
-          <p className="text-5xl md:text-6xl font-bold mb-3 text-[#761610]">
+          <p className="text-4xl md:text-5xl font-bold mb-3 text-[#761610]">
             <CountUp end={69.48} decimals={2} suffix="%" />
           </p>
           <p className="text-sm md:text-base font-medium font-poppins">
@@ -114,7 +114,7 @@ const ImpactSection = () => {
         </div>
         
         <div className="bg-white text-black text-center py-8 px-4 rounded-2xl shadow-lg">
-          <p className="text-5xl md:text-6xl font-bold mb-3 text-[#761610]">
+          <p className="text-4xl md:text-5xl font-bold mb-3 text-[#761610]">
             <CountUp end={400} />
           </p>
           <p className="text-sm md:text-base font-medium font-poppins">
