@@ -262,36 +262,42 @@ const ProgramsSection = () => {
         .programs-slider .slick-prev,
         .programs-slider .slick-next {
           z-index: 10;
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .programs-slider .slick-prev {
-          left: -20px;
+          left: 10px;
         }
         
         .programs-slider .slick-next {
-          right: -20px;
+          right: 10px;
+        }
+        
+        .programs-slider .slick-prev:hover,
+        .programs-slider .slick-next:hover {
+          background: rgba(255, 255, 255, 0.5);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
         
         .programs-slider .slick-prev:before,
         .programs-slider .slick-next:before {
-          font-size: 32px;
+          font-size: 28px;
           color: white;
+          font-weight: bold;
         }
         
         @media (max-width: 640px) {
           .programs-slider .slick-prev {
-            left: 10px;
+            left: 5px;
           }
           
           .programs-slider .slick-next {
-            right: 10px;
-          }
-          
-          .programs-slider .slick-prev:before,
-          .programs-slider .slick-next:before {
-            font-size: 28px;
+            right: 5px;
           }
         }
         

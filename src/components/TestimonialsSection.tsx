@@ -77,36 +77,42 @@ const TestimonialsSection = () => {
         .testimonials-slider-container .slick-prev,
         .testimonials-slider-container .slick-next {
           z-index: 10;
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .testimonials-slider-container .slick-prev {
-          left: -20px;
+          left: 10px;
         }
         
         .testimonials-slider-container .slick-next {
-          right: -20px;
+          right: 10px;
+        }
+        
+        .testimonials-slider-container .slick-prev:hover,
+        .testimonials-slider-container .slick-next:hover {
+          background: rgba(255, 255, 255, 0.5);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
         
         .testimonials-slider-container .slick-prev:before,
         .testimonials-slider-container .slick-next:before {
-          font-size: 32px;
+          font-size: 28px;
           color: white;
+          font-weight: bold;
         }
         
         @media (max-width: 640px) {
           .testimonials-slider-container .slick-prev {
-            left: 10px;
+            left: 5px;
           }
           
           .testimonials-slider-container .slick-next {
-            right: 10px;
-          }
-          
-          .testimonials-slider-container .slick-prev:before,
-          .testimonials-slider-container .slick-next:before {
-            font-size: 28px;
+            right: 5px;
           }
         }
         

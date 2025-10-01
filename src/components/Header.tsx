@@ -38,13 +38,13 @@ const Header = () => {
             <Menu size={30} />
           </button>
           {isMobileMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+            <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 z-50 p-3">
               <button
                 onClick={() => {
                   setIsFormOpen(true);
                   setIsMobileMenuOpen(false);
                 }}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 font-semibold rounded-t-lg"
+                className="block w-full custom-btn-bg text-white px-6 py-3 rounded-lg transition duration-200 font-poppins font-semibold cursor-pointer text-center"
               >
                 Apply Now
               </button>

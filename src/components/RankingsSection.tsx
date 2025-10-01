@@ -48,6 +48,7 @@ const RankingsSection = () => {
           arrows: true,
           dots: true,
           centerMode: false,
+          centerPadding: '0px',
         }
       }
     ]
@@ -85,36 +86,41 @@ const RankingsSection = () => {
         .rankings-slider-container .slick-prev,
         .rankings-slider-container .slick-next {
           z-index: 10;
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
+          background: white;
+          border-radius: 50%;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
         .rankings-slider-container .slick-prev {
-          left: -20px;
+          left: 10px;
         }
         
         .rankings-slider-container .slick-next {
-          right: -20px;
+          right: 10px;
+        }
+        
+        .rankings-slider-container .slick-prev:hover,
+        .rankings-slider-container .slick-next:hover {
+          background: white;
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
         
         .rankings-slider-container .slick-prev:before,
         .rankings-slider-container .slick-next:before {
-          font-size: 32px;
+          font-size: 28px;
           color: #7F1813;
+          font-weight: bold;
         }
         
         @media (max-width: 640px) {
           .rankings-slider-container .slick-prev {
-            left: 10px;
+            left: 5px;
           }
           
           .rankings-slider-container .slick-next {
-            right: 10px;
-          }
-          
-          .rankings-slider-container .slick-prev:before,
-          .rankings-slider-container .slick-next:before {
-            font-size: 28px;
+            right: 5px;
           }
         }
         
