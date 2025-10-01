@@ -29,8 +29,13 @@ const RankingsSection = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: true,
+          dots: false,
+          centerMode: false,
+          centerPadding: '0',
+          variableWidth: false,
         }
       },
       {
