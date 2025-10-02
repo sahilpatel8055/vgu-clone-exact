@@ -1,10 +1,14 @@
 import { RefreshCw } from "lucide-react";
 import { useState } from "react";
 import Slider from "react-slick";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     email: "",
@@ -70,9 +74,62 @@ const HeroSection = () => {
     autoplaySpeed: 3000,
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    
+    if (formData.captcha !== captchaText) {
+      toast({
+        title: "Invalid Captcha",
+        description: "Please enter the correct captcha",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-to-sheets', {
+        body: {
+          name: formData.firstName,
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course,
+          state: formData.state,
+          city: formData.city,
+          profession: formData.areyou,
+          gender: formData.gender
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "Your details have been submitted successfully",
+      });
+
+      setFormData({
+        firstName: "",
+        email: "",
+        phone: "",
+        course: "",
+        state: "",
+        city: "",
+        areyou: "",
+        gender: "",
+        captcha: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -243,9 +300,10 @@ const HeroSection = () => {
               
               <button
                 type="submit"
-                className="border w-full rounded-3xl cursor-pointer bg-black text-white py-2 text-sm font-medium"
+                disabled={isSubmitting}
+                className="border w-full rounded-3xl cursor-pointer bg-black text-white py-2 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>

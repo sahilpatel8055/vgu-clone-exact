@@ -1,6 +1,8 @@
 import { RefreshCw, X } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface CounselingFormDialogProps {
   open: boolean;
@@ -8,6 +10,8 @@ interface CounselingFormDialogProps {
 }
 
 const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -63,10 +67,64 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
     "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    onOpenChange(false);
+    
+    if (formData.captcha !== captchaText) {
+      toast({
+        title: "Invalid Captcha",
+        description: "Please enter the correct captcha",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-to-sheets', {
+        body: {
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.mobile,
+          course: formData.course,
+          state: formData.state,
+          city: formData.city,
+          profession: formData.areYou,
+          gender: formData.gender
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "Your details have been submitted successfully",
+      });
+
+      setFormData({
+        fullName: "",
+        email: "",
+        mobile: "",
+        course: "",
+        state: "",
+        city: "",
+        areYou: "",
+        gender: "",
+        captcha: ""
+      });
+      
+      onOpenChange(false);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -241,9 +299,10 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
 
               <button
                 type="submit"
-                className="w-full bg-black text-white font-semibold py-2.5 md:py-3 rounded-full hover:bg-gray-800 transition-colors text-sm md:text-base mt-2"
+                disabled={isSubmitting}
+                className="w-full bg-black text-white font-semibold py-2.5 md:py-3 rounded-full hover:bg-gray-800 transition-colors text-sm md:text-base mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>
