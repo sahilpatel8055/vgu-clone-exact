@@ -2,7 +2,9 @@ import { RefreshCw, X } from "lucide-react";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+
+// Replace this with your Render backend URL after deployment
+const API_URL = import.meta.env.VITE_API_URL || "YOUR_RENDER_BACKEND_URL";
 
 interface CounselingFormDialogProps {
   open: boolean;
@@ -82,18 +84,12 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
     setIsSubmitting(true);
 
     try {
-      // Check if Cloud is configured
-      if (!import.meta.env.VITE_SUPABASE_URL) {
-        toast({
-          title: "Setup Required",
-          description: "Please complete Cloud setup and add the required secrets",
-          variant: "destructive"
-        });
-        return;
-      }
-
-      const { data, error } = await supabase.functions.invoke('submit-to-sheets', {
-        body: {
+      const response = await fetch(`${API_URL}/api/submit-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           name: formData.fullName,
           email: formData.email,
           phone: formData.mobile,
@@ -102,10 +98,14 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
           city: formData.city,
           profession: formData.areYou,
           gender: formData.gender
-        }
+        })
       });
 
-      if (error) throw error;
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
 
       toast({
         title: "Success!",
@@ -129,7 +129,7 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
       console.error('Error submitting form:', error);
       toast({
         title: "Error",
-        description: "Failed to submit form. Please try again.",
+        description: error instanceof Error ? error.message : "Failed to submit form. Please try again.",
         variant: "destructive"
       });
     } finally {
