@@ -82,6 +82,16 @@ const CounselingFormDialog = ({ open, onOpenChange }: CounselingFormDialogProps)
     setIsSubmitting(true);
 
     try {
+      // Check if Cloud is configured
+      if (!import.meta.env.VITE_SUPABASE_URL) {
+        toast({
+          title: "Setup Required",
+          description: "Please complete Cloud setup and add the required secrets",
+          variant: "destructive"
+        });
+        return;
+      }
+
       const { data, error } = await supabase.functions.invoke('submit-to-sheets', {
         body: {
           name: formData.fullName,
